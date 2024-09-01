@@ -1,0 +1,35 @@
+$shadow-color: rgba(0, 0, 0, 0.13);
+$brand-size: 211px;
+$brand-img-width: 172px;
+$brand-img-height: 63px;
+
+@mixin box-shadow($color) {
+  -webkit-box-shadow: -1px -1px 8px 3px $color;
+  -moz-box-shadow: -1px -1px 8px 3px $color;
+  box-shadow: -1px -1px 8px 3px $color;
+}
+
+.brands {
+  width: 100%;
+  max-width: 1264px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: calc(60px - 16px);
+}
+
+.brand {
+  width: $brand-size;
+  height: $brand-size;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include box-shadow($shadow-color);
+
+  img {
+    width: $brand-img-width;
+    height: $brand-img-height;
+  }
+}

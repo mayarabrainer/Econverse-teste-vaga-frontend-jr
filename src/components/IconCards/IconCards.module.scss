@@ -1,0 +1,49 @@
+$shadow-color: rgba(0, 0, 0, 0.13);
+$icon-card-height: 174px;
+$icon-size: 128px;
+$bg-color: #f4f4f4;
+$font-size-medium: 16px;
+$border-radius: 10px;
+$gap-size: 20px;
+
+@mixin box-shadow($color: $shadow-color) {
+  -webkit-box-shadow: -1px -1px 8px 3px $color;
+  -moz-box-shadow: -1px -1px 8px 3px $color;
+  box-shadow: -1px -1px 8px 3px $color;
+}
+
+.iconCards {
+  margin-block: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: $gap-size;
+}
+
+.iconCard {
+  height: $icon-card-height;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  .iconTech {
+    width: $icon-size;
+    height: $icon-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    background-color: $bg-color;
+    @include box-shadow();
+
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $font-size-medium;
+    }
+  }
+}

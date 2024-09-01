@@ -1,0 +1,142 @@
+$max-width: 1264px;
+$card-width: 270px;
+$border-radius: 10px;
+$box-shadow: -1px -1px 8px 3px rgba(0, 0, 0, 0.13);
+$font-family: Poppins;
+$color-text: #3f3f40;
+$color-muted: #808080;
+$color-highlight: #FF0066;
+$font-size-title: 19px;
+$font-size-secondary: 16px;
+$font-size-tertiary: 20px;
+$font-size-small: 12px;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$button-height: 44px;
+$button-font-size: 14px;
+$button-border-radius: 4px;
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin text-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  line-clamp: $lines;
+}
+
+.cardsVitrine {
+  width: 100%;
+  max-width: $max-width;
+  display: flex;
+  gap: 62px;
+  padding: 12px;
+}
+
+.cardVitrine {
+  width: $card-width;
+  min-width: $card-width;
+  border-radius: $border-radius;
+  padding: 16px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  @include box-shadow($box-shadow);
+
+  h3 {
+    color: var(--preto, $color-text);
+    font-family: $font-family;
+    font-size: $font-size-title;
+    font-weight: $font-weight-light;
+    line-height: normal;
+    margin: 0;
+    overflow: hidden;
+    @include text-clamp(2);
+  }
+
+  s {
+    color: $color-muted;
+    font-family: $font-family;
+    font-size: $font-size-secondary;
+    font-weight: $font-weight-normal;
+    line-height: normal;
+  }
+
+  b {
+    color: $color-text;
+    font-family: $font-family;
+    font-size: $font-size-tertiary;
+    font-weight: $font-weight-bold;
+    line-height: normal;
+  }
+
+  p {
+    color: $color-text;
+    font-family: $font-family;
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+    line-height: normal;
+    margin: 0;
+    width: 100%;
+  }
+
+  span {
+    color: $color-highlight;
+    font-family: $font-family;
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+    line-height: normal;
+  }
+
+  button {
+    width: 100%;
+    height: $button-height;
+    background-color: $color-highlight;
+    border-radius: $button-border-radius;
+    border: 0;
+    font-size: $button-font-size;
+    font-weight: $font-weight-bold;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.productImage {
+  cursor: pointer;
+}
+
+.productsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.arrow,
+.arrowRight {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+}
+
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.productCard {
+  flex: 1;
+  max-width: 200px;
+  margin: 0 10px;
+  text-align: center;
+}

@@ -1,0 +1,78 @@
+$max-width: 1264px;
+$partner-banner-width: calc(574px - 80px);
+$partner-banner-height: calc(350px - 80px);
+$gradient-start: rgba(0, 0, 0, 0);
+$gradient-end: rgba(0, 0, 0, 0.8);
+$background-image: url("/assets/image-45.png");
+$border-radius: 20px;
+$padding: 40px;
+$gap: 8px;
+$heading-font-size: 40px;
+$heading-font-weight: 700;
+$text-font-size: 16px;
+$text-font-weight: 400;
+$text-max-width: 180px;
+$button-width: 131px;
+$button-height: 48px;
+$button-bg-color: #FF0066;
+$button-border-radius: 10px;
+$button-font-size: 16px;
+$button-font-weight: 700;
+$button-color: #fff;
+$button-margin-top: 24px;
+
+.partnersBanners {
+  width: 100%;
+  max-width: $max-width;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: calc(71px - 16px);
+  margin-bottom: calc(60px - 16px);
+}
+
+.partnerBanner {
+  width: $partner-banner-width;
+  height: $partner-banner-height;
+  background-image: linear-gradient(
+      to bottom,
+      $gradient-start 0%,
+      $gradient-end 100%
+    ),
+    $background-image;
+  background-size: cover;
+  border-radius: $border-radius;
+  color: #fff;
+  padding: $padding;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: $gap;
+
+  h3 {
+    font-size: $heading-font-size;
+    font-weight: $heading-font-weight;
+    margin: 0;
+  }
+
+  p {
+    font-size: $text-font-size;
+    font-weight: $text-font-weight;
+    margin: 0;
+    max-width: $text-max-width;
+  }
+
+  button {
+    width: $button-width;
+    height: $button-height;
+    background-color: $button-bg-color;
+    border-radius: $button-border-radius;
+    border: 0;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    color: $button-color;
+    margin-top: $button-margin-top;
+    cursor: pointer;
+  }
+}

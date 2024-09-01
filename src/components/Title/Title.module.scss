@@ -1,0 +1,73 @@
+$max-width: 1138px;
+$title-height: 45px;
+$title-font-size: 30px;
+$title-color: #FF0066;
+$title-font-weight: 700;
+$strike-width: 380px;
+$strike-height: 1px;
+$strike-color: #dedede;
+$negative-margin: -16px;
+
+.title {
+  width: 100%;
+  max-width: $max-width;
+  height: $title-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    height: $title-height;
+    font-size: $title-font-size;
+    color: $title-color;
+    font-weight: $title-font-weight;
+    position: relative;
+    margin: 0;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: $strike-width;
+      height: $strike-height;
+      background: $strike-color;
+      position: absolute;
+      top: 50%;
+    }
+
+    &::before {
+      right: 0;
+    }
+
+    &::after {
+      left: 0;
+    }
+  }
+
+  &[data-strikes=true] {
+    p {
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: $strike-width;
+        height: $strike-height;
+        background: $strike-color;
+        position: absolute;
+        top: 50%;
+      }
+
+      &::before {
+        right: 0;
+      }
+
+      &::after {
+        left: 0;
+      }
+    }
+  }
+}
+
+.seeAll {
+  margin-block: $negative-margin;
+}

@@ -1,0 +1,109 @@
+$primary-color: #FF0066;
+$secondary-color: #9f9f9f;
+$background-color: #f6f5f2;
+$border-color: #f0f0f0;
+$font-size-small: 12px;
+$header-width: 1280px;
+$max-width: 900px;
+$input-height: 48px;
+$input-width: 657px;
+$logo-width: 139px;
+$logo-height: 50px;
+
+@mixin flex-layout($direction: row, $justify: flex-start, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+.header {
+  max-width: $header-width;
+  width: 100%;
+  @include flex-layout(column, center);
+}
+
+.headerInfo {
+  width: $header-width;
+  height: 32px;
+  @include flex-layout(row, space-around);
+  color: $secondary-color;
+  border-bottom: 1px solid $border-color;
+  font-size: $font-size-small;
+  text-align: center;
+  line-height: 18px;
+  max-width: $max-width;
+
+  .headerInfoItem {
+    @include flex-layout(row, center, center, 10px);
+
+    b {
+      color: $primary-color;
+    }
+  }
+}
+
+.center {
+  @include flex-layout(row, center, center, 48px);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.headerLogo img {
+  width: $logo-width;
+  height: $logo-height;
+  right: 30px;
+  cursor: pointer;
+}
+
+.headerSearch {
+  position: relative;
+  width: 100%;
+
+  input {
+    width: $input-width;
+    height: $input-height;
+    background-color: $background-color;
+    border: 0;
+    border-radius: 10px;
+    font-size: 14px;
+    padding-inline: 12px;
+  }
+
+  img {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+  }
+}
+
+.headerNav {
+  @include flex-layout(row, space-around, center, 2px);
+  color: $secondary-color;
+  border-top: 1px solid $border-color;
+  width: 1141px;
+  height: 20px;
+  padding-block: 10px;
+  box-shadow: 10px 0 15px -6px rgba($border-color, 1), 
+              -12px 0 8px -6px rgba($border-color, 1);
+
+  p {
+    font-size: $font-size-small;
+    cursor: pointer;
+  }
+}
+
+.headerNavInfo {
+  @include flex-layout(row, center, center, 10px);
+}
+
+.headerIcon {
+  @include flex-layout(row, center, center, 32px);
+}
+
+.headerIconInfo {
+  @include flex-layout(row, center, center);
+  cursor: pointer;
+}

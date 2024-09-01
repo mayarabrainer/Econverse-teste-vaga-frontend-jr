@@ -1,0 +1,14 @@
+$container-gap: 40px;
+
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+.container {
+  width: 100%;
+  @include flex-center(row, $container-gap);
+}

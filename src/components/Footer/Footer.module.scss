@@ -1,0 +1,22 @@
+$footer-bg-color: #2A2A2A;
+$footer-padding: 50px 0 0 0;
+
+@mixin flex-layout($justify: flex-start, $align: flex-start) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.footer {
+  background-color: $footer-bg-color;
+  width: 100%;
+}
+
+.footerInfoContainer {
+  width: 100%;
+  @include flex-layout(space-around); 
+}
+
+.footerInfoDetail {
+  padding: $footer-padding;
+}

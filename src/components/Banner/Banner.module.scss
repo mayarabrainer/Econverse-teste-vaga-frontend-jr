@@ -1,0 +1,55 @@
+$white-color: #fff;
+$highlight-color: #FF0066;
+$banner-height: 395px;
+$banner-margin-top: -16px;
+$button-width: 227px;
+$button-height: 60px;
+$border-radius: 5px;
+$font-size-large: 48px;
+$font-size-medium: 18px;
+
+@mixin banner-background($image-url) {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url($image-url);
+  background-size: cover;
+}
+
+.banner {
+  width: 100%;
+  height: $banner-height;
+  @include banner-background("/assets/Rectangle-250.png");
+  margin-top: $banner-margin-top;
+
+  &::after {
+    filter: blur(1px);
+  }
+}
+
+.imageCenterInfo {
+  max-width: 100%;
+  margin-left: 86px;
+  color: $white-color;
+
+  p {
+    font-size: $font-size-large;
+    font-weight: 500;
+    max-width: 100%;
+  }
+
+  button {
+    width: $button-width;
+    height: $button-height;
+    background-color: $highlight-color;
+    border-radius: $border-radius;
+    border: 0;
+    font-size: $font-size-medium;
+    font-weight: 500;
+    color: $white-color;
+    margin-top: -19px;
+    cursor: pointer;
+  }
+}

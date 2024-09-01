@@ -1,0 +1,71 @@
+$max-width: 1264px;
+$banner-width: calc(589px - 80px);
+$banner-height: calc(284px - 80px);
+$border-radius: 20px;
+$box-shadow: -1px -1px 8px 3px rgba(0, 0, 0, 0.13);
+$background-color-banner: #fff;
+$background-color-button: #F71963;
+$font-size-title: 40px;
+$font-size-secondary: 16px;
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+$padding: 40px;
+
+@mixin linear-gradient-bg($color1, $color2, $image) {
+  background-image: linear-gradient(
+    to bottom,
+    $color1 0%,
+    $color2 100%
+  ), url($image);
+  background-size: cover;
+}
+
+.productsBanners {
+  width: 100%;
+  max-width: $max-width;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: calc(88px - 16px);
+  margin-bottom: calc(78px - 16px);
+}
+
+.productBanner {
+  width: $banner-width;
+  height: $banner-height;
+  @include linear-gradient-bg(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8), "/assets/image-45.png");
+  border-radius: $border-radius;
+  color: #fff;
+  padding: $padding;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 8px;
+
+  h3 {
+    font-size: $font-size-title;
+    font-weight: $font-weight-bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: $font-size-secondary;
+    font-weight: $font-weight-normal;
+    margin: 0;
+    max-width: 180px;
+  }
+
+  button {
+    width: 131px;
+    height: 48px;
+    background-color: $background-color-button;
+    border-radius: 10px;
+    border: 0;
+    font-size: $font-size-secondary;
+    font-weight: $font-weight-bold;
+    color: #fff;
+    margin-top: 24px;
+    cursor: pointer;
+  }
+}
