@@ -1,4 +1,3 @@
-// import img from 'next/img'
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
 import IconCards from "@/components/IconCards";
